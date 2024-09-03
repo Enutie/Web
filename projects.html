@@ -1,25 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="assets/favorite.png">
-</head>
-<body>
-    <div id="header-placeholder"></div>
-    <main>
-        <section id="projects" class="projects-section">
-            <h1>My Projects</h1>
-            <div id="project-grid" class="project-grid">
-                <!-- Project cards will be loaded here -->
-            </div>
-        </section>
-    </main>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Morten Dahl Pedersen - Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/projects.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
 
-    <div id="footer-placeholder"></div>
-    <script src="script.js"></script>
-</body>
+				<!-- Header -->
+					<header id="header">
+						<h1>My Projects</h1>
+                        <div class="project">
+                            <h2>Albot - Bachelor's Project</h2>
+                            <p>Learn Algorithms with Albot</p>
+                            <a href="https://albot.enutie.com" class="button">Visit Project</a>
+                        </div>
+						<nav>
+							<ul>
+								<li><a href="index.html" class="icon solid fa-home"><span class="label">Home</span></a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; 2024 Morten Dahl Pedersen. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+					</footer>
+
+			</div>
+		</div>
+		<script>
+			window.onload = function() { document.body.classList.remove('is-preload'); }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
 </html>

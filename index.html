@@ -1,34 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morten - Web Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="assets/favorite.png">
-</head>
-<body>
-    <div id="header-placeholder"></div>
-    <main>
-        <section id="home" class="hero">
-            <h1>Morten Dahl Pedersen</h1>
-            <h2>Web Developer & Game Enthusiast</h2>
-            <p>Crafting web experiences by day, exploring game development by night.</p>
-            <a href="projects.html" class="cta-button">View My Projects</a>
-        </section>
+<!DOCTYPE HTML>
+<!--
+	Aerial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Morten Dahl Pedersen</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
 
-        <section id="featured-projects">
-            <h2>Featured Projects</h2>
-            <div id="project-grid" class="project-grid">
-                <!-- Project cards will be loaded here -->
-            </div>
-            <a href="projects.html" class="view-all-button">View All Projects</a>
-        </section>
+				<!-- Header -->
+					<header id="header">
+						<h1>Morten Dahl Pedersen</h1>
+						<p>Web Developer &nbsp;&bull;&nbsp; Game Enthusiast &nbsp;&bull;&nbsp; Aspiring Game Creator</p>
+						<nav>
+							<ul>
+								<li><a href="projects.html" class="icon solid fa-folder"><span class="label">Projects</span></a></li>
+								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://linkedin.com/in/modp" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/enutie" class="icon brands fa-github"><span class="label">Github</span></a></li>
+								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+						</nav>
+					</header>
 
-    </main>
-    <div id="footer-placeholder"></div>
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; 2024 Morten Dahl Pedersen. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+					</footer>
 
-    <script src="script.js"></script>
-</body>
+			</div>
+		</div>
+		<script>
+			window.onload = function() { document.body.classList.remove('is-preload'); }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
 </html>
