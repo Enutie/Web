@@ -14,16 +14,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout your repository using git
+        uses: actions/checkout@v3
       - name: Install, build, and upload your site
         uses: withastro/action@v1
         env:
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
-        # with:
-        #   path: . # optional
-        #   node-version: 18 # optional
-        #   package-manager: npm # optional
 
   deploy:
     needs: build
