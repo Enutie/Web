@@ -20,7 +20,7 @@ jobs:
         uses: withastro/action@v1
         env:
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-          TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+          TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
 
   deploy:
     needs: build
