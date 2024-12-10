@@ -1,0 +1,49 @@
+// styles/scss/_layout.scss
+
+body {
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: map-get($spacing, 'md');
+    background: map-get($colors, 'bg');
+    color: map-get($colors, 'text');
+}
+
+nav {
+    margin-bottom: map-get($spacing, 'md');
+    padding-bottom: map-get($spacing, 'sm');
+    border-bottom: 1px solid map-get($colors, 'border');
+
+    a {
+        margin-right: map-get($spacing, 'sm');
+        color: map-get($colors, 'accent');
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+h1, h2, h3 {
+    color: map-get($colors, 'text');
+    line-height: 1.2;
+    margin-top: map-get($spacing, 'md');
+    margin-bottom: map-get($spacing, 'sm');
+}
+
+footer {
+    margin-top: map-get($spacing, 'xl');
+    padding-top: map-get($spacing, 'md');
+    border-top: 1px solid map-get($colors, 'border');
+    color: map-get($colors, 'secondary');
+    text-align: center;
+}
+
+@include media-breakpoint-up('sm') {
+    body {
+        padding: map-get($spacing, 'sm');
+    }
+}

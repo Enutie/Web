@@ -1,0 +1,32 @@
+// styles/scss/_posts.scss
+
+.post {
+    margin-bottom: map-get($spacing, 'lg');
+    padding-bottom: map-get($spacing, 'md');
+    border-bottom: 1px solid map-get($colors, 'border');
+    
+    &:last-child {
+        border-bottom: none;
+    }
+    
+    .post-date {
+        display: block;
+        color: map-get($colors, 'secondary');
+        margin-bottom: map-get($spacing, 'sm');
+    }
+    
+    .post-excerpt {
+        margin-top: map-get($spacing, 'sm');
+    }
+    
+    .read-more {
+        display: inline-block;
+        margin-top: map-get($spacing, 'sm');
+        color: map-get($colors, 'accent');
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

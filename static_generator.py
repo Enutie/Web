@@ -1,6 +1,7 @@
 import os
 import markdown
 import shutil
+import sass
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 
@@ -17,7 +18,8 @@ class StaticSiteGenerator:
             self.content_dir / 'images',
             self.content_dir / 'videos',
             self.content_dir / 'music',
-            self.output_dir
+            self.output_dir,
+            self.output_dir / 'styles'
         ]
         for directory in directories:
             directory.mkdir(parents=True, exist_ok=True)
@@ -73,10 +75,24 @@ class StaticSiteGenerator:
             })
             
         return sorted(posts, key=lambda x: x['date'], reverse=True)
+    
+    def compile_sass(self):
+        """Compile Sass files to CSS"""
+        scss_path = Path('styles/scss/main.scss')
+        css_output_path = self.output_dir / 'styles/main.css'
+        
+        # Ensure output directory exists
+        css_output_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        # Compile Sass
+        if scss_path.exists():
+            css = sass.compile(filename=str(scss_path))
+            css_output_path.write_text(css)
         
     def build(self):
         """Build the entire site"""
         self.setup_directories()
+        self.compile_sass()
         self.copy_media()
         
         # Get content

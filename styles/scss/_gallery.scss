@@ -1,0 +1,35 @@
+// styles/scss/_gallery.scss
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: map-get($spacing, 'sm');
+    margin: map-get($spacing, 'md') 0;
+
+    img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 4px;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}
+
+.media-section {
+    margin-top: map-get($spacing, 'lg');
+
+    h2 {
+        margin-bottom: map-get($spacing, 'md');
+    }
+}
+
+@include media-breakpoint-up('md') {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: map-get($spacing, 'md');
+    }
+}
