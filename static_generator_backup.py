@@ -87,8 +87,7 @@ class StaticSiteGenerator:
         # Compile Sass
         if scss_path.exists():
             css = sass.compile(filename=str(scss_path))
-            # Write with UTF-8 encoding explicitly
-            css_output_path.write_text(css, encoding='utf-8')
+            css_output_path.write_text(css)
         
     def build(self):
         """Build the entire site"""
@@ -104,7 +103,6 @@ class StaticSiteGenerator:
         templates = {
             'index.html': {'posts': posts, 'galleries': galleries},
             'posts.html': {'posts': posts},
-            'gallery.html': {'galleries': galleries}
         }
         
         for template_name, context in templates.items():

@@ -1,32 +1,45 @@
-// styles/scss/_posts.scss
+@import 'variables';
 
-.post {
-    margin-bottom: map-get($spacing, 'lg');
-    padding-bottom: map-get($spacing, 'md');
-    border-bottom: 1px solid map-get($colors, 'border');
+.post-preview {
+    margin-bottom: $spacing-xlarge;
+    padding: $spacing-medium;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba($primary, 0.1);
     
-    &:last-child {
-        border-bottom: none;
+    h2 {
+        color: $primary;
+        margin-bottom: $spacing-small;
     }
     
-    .post-date {
-        display: block;
-        color: map-get($colors, 'secondary');
-        margin-bottom: map-get($spacing, 'sm');
-    }
-    
-    .post-excerpt {
-        margin-top: map-get($spacing, 'sm');
+    .date {
+        color: lighten($primary, 30%);
+        font-size: 0.9rem;
     }
     
     .read-more {
         display: inline-block;
-        margin-top: map-get($spacing, 'sm');
-        color: map-get($colors, 'accent');
+        color: $accent;
         text-decoration: none;
+        margin-top: $spacing-medium;
         
         &:hover {
+            color: $secondary;
             text-decoration: underline;
         }
+    }
+}
+
+.post-content {
+    line-height: 1.8;
+    
+    h1, h2, h3 {
+        color: $primary;
+        margin-top: $spacing-xlarge;
+        margin-bottom: $spacing-medium;
+    }
+    
+    p {
+        margin-bottom: $spacing-medium;
     }
 }

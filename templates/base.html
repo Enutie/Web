@@ -1,27 +1,32 @@
-<!-- templates/base.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Enutie's Creative Journey{% endblock %}</title>
+    <title>{% block title %}Enutie - Creative Journey{% endblock %}</title>
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
-    <nav>
-        <nav>
-            <a href="/index.html">Home</a>
-            <a href="/posts.html">Posts</a>
-            <a href="/index.html#gallery">Gallery</a>
-        </nav>
-    </nav>
+
     
-    <main>
+    <nav>
+            <div class="site-title">ENUTIE</div>
+            
+            <div class="nav-links">
+                <a href="/index.html" >
+                    <span class="nav-text">Home</span>
+                </a>
+                <a href="/posts.html" >
+                    <span class="nav-text">Blog Posts</span>
+                </a>
+                <a href="/gallery.html" >
+                    <span class="nav-text">Gallery</span>
+                </a>
+            </div>
+    </nav>
+
+    <main role="main">
         {% block content %}{% endblock %}
     </main>
-    
-    <footer>
-        <p>© 2024 Enutie - Creative Journey</p>
-    </footer>
 </body>
 </html>

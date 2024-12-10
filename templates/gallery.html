@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Gallery{% endblock %}
+{% block content %}
+
+<h1>Media Gallery</h1>
+
+{# Images Section #}
+{% if galleries.images %}
+<section class="media-section">
+    <h2>Images</h2>
+    <div class="gallery">
+        {% for image in galleries.images %}
+            <figure class="gallery-item">
+                <img src="/{{ image }}" alt="Gallery" loading="lazy">
+            </figure>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{# Videos Section #}
+{% if galleries.videos %}
+<section class="media-section">
+    <h2>Videos</h2>
+    <div class="gallery">
+        {% for video in galleries.videos %}
+            <div class="gallery-item">
+                <video controls>
+                    <source src="/{{ video }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{# Music Section #}
+{% if galleries.music %}
+<section class="media-section">
+    <h2>Music</h2>
+    <div class="gallery audio-gallery">
+        {% for audio in galleries.music %}
+            <div class="gallery-item">
+                <audio controls>
+                    <source src="/{{ audio }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}

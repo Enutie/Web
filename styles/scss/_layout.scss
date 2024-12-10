@@ -1,49 +1,74 @@
-// styles/scss/_layout.scss
+@import 'variables';
+
 
 body {
-    font-family: $font-family-base;
-    line-height: $line-height-base;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: map-get($spacing, 'md');
-    background: map-get($colors, 'bg');
-    color: map-get($colors, 'text');
+    background-color: $background;
+    color: $primary;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
-nav {
-    margin-bottom: map-get($spacing, 'md');
-    padding-bottom: map-get($spacing, 'sm');
-    border-bottom: 1px solid map-get($colors, 'border');
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
 
+// Site title
+.site-title {
+    color: $secondary;
+    font-size: 2.5rem;
+    padding: $spacing-medium;
+    text-align: center;
+    
+    transition: color 0.3s ease;
+    
+    &:hover {
+        color: $accent;
+    }
+}
+
+a {
+    color: $secondary;         
+    text-decoration: underline;  
+    transition: color 0.3s ease;
+    
+    &:hover {
+        color: $highlight;  
+    }
+    
+    &:visited {
+        color: $accent;  
+    }
+}
+
+// Navigation
+.nav-links {
+    background-color: $primary;
+    padding: $spacing-medium;
+    text-align: center;
+    
     a {
-        margin-right: map-get($spacing, 'sm');
-        color: map-get($colors, 'accent');
+        display: inline-block;
+        color: $background;
         text-decoration: none;
-        font-weight: 500;
-
+        padding: $spacing-small $spacing-medium;
+        margin: 0 $spacing-small;
+        
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        
         &:hover {
-            text-decoration: underline;
+            background-color: $highlight;
         }
     }
 }
 
-h1, h2, h3 {
-    color: map-get($colors, 'text');
-    line-height: 1.2;
-    margin-top: map-get($spacing, 'md');
-    margin-bottom: map-get($spacing, 'sm');
-}
-
-footer {
-    margin-top: map-get($spacing, 'xl');
-    padding-top: map-get($spacing, 'md');
-    border-top: 1px solid map-get($colors, 'border');
-    color: map-get($colors, 'secondary');
-    text-align: center;
-}
-
-@include media-breakpoint-up('sm') {
-    body {
-        padding: map-get($spacing, 'sm');
-    }
+// Main content area
+[role="main"] {
+    max-width: $max-width;
+    width: $content-width;
+    margin: $spacing-large auto;
+    padding: $spacing-medium;
 }
