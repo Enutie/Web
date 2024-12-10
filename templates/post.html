@@ -1,0 +1,14 @@
+<!-- templates/post.html -->
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<article class="post">
+    <h1>{{ post.title }}</h1>
+    <time class="post-date">{{ post.date }}</time>
+    <div class="post-content">
+        {{ post.content }}
+    </div>
+</article>
+{% endblock %}

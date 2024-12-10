@@ -1,0 +1,32 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome to My Creative Journey</h1>
+<p>I'm a web developer exploring game development, art, music, and writing.</p>
+
+<section class="posts-section">
+    <h2>Recent Posts</h2>
+    {% for post in posts[:3] %}
+    <article class="post">
+        <h3><a href="/posts/{{ post.slug }}.html">{{ post.title }}</a></h3>
+        <time class="post-date">{{ post.date }}</time>
+        <div class="post-excerpt">
+            {{ post.content | truncate(200, true, "...") }}
+            <a href="/posts/{{ post.slug }}.html" class="read-more">Read more →</a>
+        </div>
+    </article>
+    {% endfor %}
+</section>
+
+<section id="gallery" class="gallery-section">
+    <h2>Media Gallery</h2>
+    {% if galleries.images %}
+    <div class="gallery">
+        {% for image in galleries.images %}
+        <img src="/{{ image }}" alt="Gallery image" loading="lazy">
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+{% endblock %}
