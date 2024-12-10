@@ -1,3 +1,3 @@
 markdown==3.4.1
 jinja2==3.1.2
-pysass==0.1.0
+libass==0.20.0
