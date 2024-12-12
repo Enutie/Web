@@ -15,17 +15,62 @@ img {
     object-fit: contain;
 }
 
-// Site title
-.site-title {
-    color: $secondary;
-    font-size: 2.5rem;
-    padding: $spacing-medium;
-    text-align: center;
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $nav-height;
+    z-index: 1000;
+    background-color: rgba($background, $nav-background-alpha);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba($primary, 0.1);
     
-    transition: color 0.3s ease;
-    
-    &:hover {
-        color: $accent;
+    .nav-container {
+        max-width: $max-width;
+        width: $content-width;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 $spacing-medium;
+    }
+
+    .site-title {
+        color: $secondary;
+        font-size: 2rem;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        
+        &:hover {
+            color: $accent;
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        gap: $spacing-medium;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: $primary;
+        text-decoration: none;
+        padding: $spacing-small $spacing-medium;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background-color: rgba($highlight, 0.2);
+            color: $secondary;
+        }
+
+        &.active {
+            background-color: rgba($highlight, 0.3);
+            color: $secondary;
+        }
     }
 }
 
@@ -43,32 +88,17 @@ a {
     }
 }
 
-// Navigation
-.nav-links {
-    background-color: $primary;
-    padding: $spacing-medium;
-    text-align: center;
-    
-    a {
-        display: inline-block;
-        color: $background;
-        text-decoration: none;
-        padding: $spacing-small $spacing-medium;
-        margin: 0 $spacing-small;
-        
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
-        
-        &:hover {
-            background-color: $highlight;
-        }
-    }
-}
 
-// Main content area
 [role="main"] {
     max-width: $max-width;
     width: $content-width;
     margin: $spacing-large auto;
     padding: $spacing-medium;
+}
+
+.full-width-section {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
 }

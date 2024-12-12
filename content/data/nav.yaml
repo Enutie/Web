@@ -1,0 +1,13 @@
+main_nav:
+  - title: "Home"
+    url: "/"
+  - title: "Blog Posts"
+    url: "/posts.html"
+  - title: "Gallery"
+    url: "/gallery.html"
+
+footer_nav:
+  - title: "About"
+    url: "/about.html"
+  - title: "Contact"
+    url: "/contact.html"

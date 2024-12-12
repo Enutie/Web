@@ -1,0 +1,12 @@
+<section class="full-width-section">
+    <div class="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">
+                {{ page.hero.title if page.hero and page.hero.title else site.title }}
+            </h1>
+            <p class="hero__subtitle">
+                {{ page.hero.subtitle if page.hero and page.hero.subtitle else site.description }}
+            </p>
+        </div>
+    </div>
+</section>

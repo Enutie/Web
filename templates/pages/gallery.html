@@ -11,7 +11,7 @@
     <div class="gallery">
         {% for image in galleries.images %}
             <figure class="gallery-item">
-                <img src="/{{ image }}" alt="Gallery" loading="lazy">
+                <img src="{{ image }}" alt="Gallery" loading="lazy">
             </figure>
         {% endfor %}
     </div>
@@ -26,7 +26,7 @@
         {% for video in galleries.videos %}
             <div class="gallery-item">
                 <video controls>
-                    <source src="/{{ video }}" type="video/mp4">
+                    <source src="{{ video }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -43,7 +43,7 @@
         {% for audio in galleries.music %}
             <div class="gallery-item">
                 <audio controls>
-                    <source src="/{{ audio }}" type="audio/mpeg">
+                    <source src="{{ audio }}" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </div>

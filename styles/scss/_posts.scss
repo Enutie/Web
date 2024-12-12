@@ -1,45 +1,94 @@
-@import 'variables';
+.post-grid {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xlarge;
+    margin: $spacing-xlarge 0;
+}
 
-.post-preview {
-    margin-bottom: $spacing-xlarge;
-    padding: $spacing-medium;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba($primary, 0.1);
+.post-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xlarge;
+    align-items: center;
     
-    h2 {
-        color: $primary;
-        margin-bottom: $spacing-small;
+    &:nth-child(even) {
+        direction: rtl;
+        
+        .post-content {
+            direction: ltr;
+        }
     }
     
-    .date {
-        color: lighten($primary, 30%);
+    .post-content {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-medium;
+    }
+    
+    .post-date {
+        color: $secondary;
         font-size: 0.9rem;
     }
     
-    .read-more {
-        display: inline-block;
-        color: $accent;
-        text-decoration: none;
-        margin-top: $spacing-medium;
+    .post-title {
+        font-size: 2.5rem;
+        color: $secondary;
+        margin: 0;
+        line-height: 1.2;
+    }
+    
+    .post-excerpt {
+        color: $primary;
+        line-height: 1.6;
+    }
+    
+    .post-image {
+        width: 100%;
+        aspect-ratio: 2/1;
+        object-fit: cover;
+        border-radius: 8px;
+        background-color: rgba($primary, 0.1); 
+    }
+
+    .post-single {
+        padding-top: calc($nav-height + $spacing-large); 
         
-        &:hover {
+        h1 {
+            color: $primary;
+            margin-bottom: $spacing-medium;
+            font-size: 2.5rem;
+        }
+        
+        time {
             color: $secondary;
-            text-decoration: underline;
+            display: block;
+            margin-bottom: $spacing-large;
+        }
+    
+        .post-content {
+            color: $primary;
+            line-height: 1.8;
+    
+            > * + * {
+                margin-top: $spacing-medium;
+            }
+    
+            h2, h3, h4 {
+                color: $primary;
+                margin-top: $spacing-large;
+                margin-bottom: $spacing-medium;
+            }
         }
     }
 }
 
-.post-content {
-    line-height: 1.8;
-    
-    h1, h2, h3 {
-        color: $primary;
-        margin-top: $spacing-xlarge;
-        margin-bottom: $spacing-medium;
-    }
-    
-    p {
-        margin-bottom: $spacing-medium;
+@media (max-width: 768px) {
+    .post-item {
+        grid-template-columns: 1fr;
+        gap: $spacing-large;
+        
+        &:nth-child(even) {
+            direction: ltr;
+        }
     }
 }

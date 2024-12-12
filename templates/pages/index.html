@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% from "components/_post_card.html" import post_card %}
+{% block content %}
+{% include "components/hero.html" with context %}
+
+<section>
+    <div class="post-grid">
+        {% for post in posts[:3] %}
+            {{ post_card(post) }}
+        {% endfor %}
+    </div>
+    
+    {% if posts %}
+        <div class="see-all-posts">
+            <a href="/posts.html" class="button">See all posts</a>
+        </div>
+    {% endif %}
+</section>
+
+<section class="gallery-section">
+    <h2>Media Gallery</h2>
+    {% if galleries.images %}
+    <div class="gallery">
+        {% for image in galleries.images %}
+        <div class="gallery-item">
+            <img src="{{ image }}" alt="Gallery image" loading="lazy">
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

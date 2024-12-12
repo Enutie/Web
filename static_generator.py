@@ -2,17 +2,58 @@ import os
 import markdown
 import shutil
 import sass
+import yaml
 from pathlib import Path
+from typing import Dict, Any
 from jinja2 import Environment, FileSystemLoader
+from dataclasses import dataclass
 from livereload import Server
-import threading
-import time
+
+@dataclass
+class SiteConfig:
+    """Site configuration data class"""
+    title: str
+    description: str
+    author: str
+    social: Dict[str, str]
+    pages: Dict[str, Any]
 
 class StaticSiteGenerator:
     def __init__(self, content_dir='content', output_dir='public'):
         self.content_dir = Path(content_dir)
         self.output_dir = Path(output_dir)
-        self.env = Environment(loader=FileSystemLoader('templates'))
+        self.env = Environment(
+            loader=FileSystemLoader([
+                'templates/pages',
+                'templates'
+            ])
+        )
+        self.site_config = self._load_site_config()
+        self.nav_config = self._load_nav_config()
+
+    def _load_site_config(self) -> SiteConfig:
+        """Load site configuration from YAML"""
+        config_path = self.content_dir / 'data' / 'site.yaml'
+        with open(config_path, 'r', encoding='utf-8') as f:
+            config_data = yaml.safe_load(f)
+            return SiteConfig(**config_data['site'])
+
+    def _load_nav_config(self) -> Dict:
+        """Load navigation configuration"""
+        nav_path = self.content_dir / 'data' / 'nav.yaml'
+        with open(nav_path, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f)
+        
+    def get_page_context(self, page_name: str, additional_context: Dict = None) -> Dict:
+        """Get context for a specific page"""
+        context = {
+            'site': self.site_config,
+            'nav': self.nav_config,
+            'page': self.site_config.pages.get(page_name, {}),
+        }
+        if additional_context:
+            context.update(additional_context)
+        return context
         
     def setup_directories(self):
         """Create necessary directories if they don't exist"""
@@ -60,7 +101,12 @@ class StaticSiteGenerator:
                 
     def convert_markdown_files(self):
         """Convert markdown files to HTML"""
-        md = markdown.Markdown(extensions=['meta'])
+        md = markdown.Markdown(extensions=[
+            'meta',
+            'attr_list',  
+            'fenced_code',  
+            'tables'  
+        ])
         posts = []
         
         for md_file in (self.content_dir / 'posts').glob('*.md'):
@@ -84,13 +130,10 @@ class StaticSiteGenerator:
         scss_path = Path('styles/scss/main.scss')
         css_output_path = self.output_dir / 'styles/main.css'
         
-        # Ensure output directory exists
         css_output_path.parent.mkdir(parents=True, exist_ok=True)
         
-        # Compile Sass
         if scss_path.exists():
             css = sass.compile(filename=str(scss_path))
-            # Write with UTF-8 encoding explicitly
             css_output_path.write_text(css, encoding='utf-8')
         
     def build(self):
@@ -99,54 +142,64 @@ class StaticSiteGenerator:
         self.setup_directories()
         self.compile_sass()
         self.copy_media()
-        
-        # Get content
+
         posts = self.convert_markdown_files()
         galleries = self.get_media_galleries()
-        
-        # Render pages
-        templates = {
-            'index.html': {'posts': posts, 'galleries': galleries},
-            'posts.html': {'posts': posts},
-            'gallery.html': {'galleries': galleries}
-        }
-        
-        for template_name, context in templates.items():
-            template = self.env.get_template(template_name)
-            output = template.render(**context)
-            
-            output_path = self.output_dir / template_name
-            output_path.parent.mkdir(exist_ok=True)
-            with open(output_path, 'w', encoding='utf-8') as f:
-                f.write(output)
-                
-        # Generate individual post pages
-        post_template = self.env.get_template('post.html')
+
         for post in posts:
-            output = post_template.render(post=post)
-            post_path = self.output_dir / 'posts' / f"{post['slug']}.html"
-            post_path.parent.mkdir(exist_ok=True)
-            
-            with open(post_path, 'w', encoding='utf-8') as f:
-                f.write(output)
-        
+            self.render_post(post)
+
+        templates = {
+            'index.html': self.get_page_context('home', {
+                'posts': posts,
+                'galleries': galleries
+            }),
+            'posts.html': self.get_page_context('posts', {
+                'posts': posts
+            }),
+            'gallery.html': self.get_page_context('gallery', {
+                'galleries': galleries
+            })
+        }
+
+        # Build pages
+        for template_name, context in templates.items():
+            self.render_template(template_name, context)
+
         print("✨ Build complete!")
+
+    def render_post(self, post: Dict):
+        """Render a single post with template wrapping"""
+        context = self.get_page_context('posts')  
+        context['post'] = post
+        
+        template = self.env.get_template('pages/post.html')
+        output = template.render(**context)  
+        
+        output_path = self.output_dir / 'posts' / f"{post['slug']}.html"
+        output_path.parent.mkdir(exist_ok=True)
+        output_path.write_text(output, encoding='utf-8')
+
+    def render_template(self, template_name: str, context: Dict):
+        """Render a template with given context"""
+        template = self.env.get_template(f'pages/{template_name}')
+        output = template.render(**context)
+        
+        output_path = self.output_dir / template_name
+        output_path.parent.mkdir(exist_ok=True)
+        output_path.write_text(output, encoding='utf-8')
 
 def serve_site():
     """Serve the site with live reload"""
     generator = StaticSiteGenerator()
     
-    # Initial build
     generator.build()
     
-    # Create function for the server to call when rebuilding
     def rebuild():
         generator.build()
     
-    # Start the livereload server
     server = Server()
     
-    # Watch directories for changes
     server.watch('content/**/*.md', rebuild)
     server.watch('templates/**/*.html', rebuild)
     server.watch('styles/**/*.scss', rebuild)
@@ -154,7 +207,6 @@ def serve_site():
     server.watch('content/videos/*', rebuild)
     server.watch('content/music/*', rebuild)
     
-    # Serve the site
     print("🚀 Starting development server at http://localhost:8000")
     server.serve(root='public', port=8000, open_url_delay=1)
 

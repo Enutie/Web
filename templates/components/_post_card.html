@@ -1,0 +1,20 @@
+{% macro post_card(post) %}
+<article class="post-item">
+    <div class="post-content">
+        <time class="post-date">{{ post.date }}</time>
+        <h2 class="post-title">
+            <a href="/posts/{{ post.slug }}.html">{{ post.title }}</a>
+        </h2>
+        <div class="post-excerpt">
+            {{ post.content | truncate(150) }}
+        </div>
+    </div>
+    <div class="post-image-wrapper">
+        {% if post.image %}
+            <img class="post-image" src="{{ post.image }}" alt="{{ post.title }}">
+        {% else %}
+            <div class="post-image"></div>
+        {% endif %}
+    </div>
+</article>
+{% endmacro %}
