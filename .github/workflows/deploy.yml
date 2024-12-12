@@ -24,6 +24,7 @@ jobs:
           pip install libsass
           pip install markdown jinja2
           pip install livereload
+          pip install yaml
          
       - name: Build site
         run: python static_generator.py build
