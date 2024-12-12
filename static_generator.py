@@ -4,6 +4,9 @@ import shutil
 import sass
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
+from livereload import Server
+import threading
+import time
 
 class StaticSiteGenerator:
     def __init__(self, content_dir='content', output_dir='public'):
@@ -92,6 +95,7 @@ class StaticSiteGenerator:
         
     def build(self):
         """Build the entire site"""
+        print("🔨 Building site...")
         self.setup_directories()
         self.compile_sass()
         self.copy_media()
@@ -111,11 +115,13 @@ class StaticSiteGenerator:
             template = self.env.get_template(template_name)
             output = template.render(**context)
             
-            with open(self.output_dir / template_name, 'w', encoding='utf-8') as f:
+            output_path = self.output_dir / template_name
+            output_path.parent.mkdir(exist_ok=True)
+            with open(output_path, 'w', encoding='utf-8') as f:
                 f.write(output)
                 
         # Generate individual post pages
-        post_template = self.env.get_template('post.html')  # Changed from posts.html to post.html
+        post_template = self.env.get_template('post.html')
         for post in posts:
             output = post_template.render(post=post)
             post_path = self.output_dir / 'posts' / f"{post['slug']}.html"
@@ -123,7 +129,41 @@ class StaticSiteGenerator:
             
             with open(post_path, 'w', encoding='utf-8') as f:
                 f.write(output)
+        
+        print("✨ Build complete!")
+
+def serve_site():
+    """Serve the site with live reload"""
+    generator = StaticSiteGenerator()
+    
+    # Initial build
+    generator.build()
+    
+    # Create function for the server to call when rebuilding
+    def rebuild():
+        generator.build()
+    
+    # Start the livereload server
+    server = Server()
+    
+    # Watch directories for changes
+    server.watch('content/**/*.md', rebuild)
+    server.watch('templates/**/*.html', rebuild)
+    server.watch('styles/**/*.scss', rebuild)
+    server.watch('content/images/*', rebuild)
+    server.watch('content/videos/*', rebuild)
+    server.watch('content/music/*', rebuild)
+    
+    # Serve the site
+    print("🚀 Starting development server at http://localhost:8000")
+    server.serve(root='public', port=8000, open_url_delay=1)
 
 if __name__ == '__main__':
-    generator = StaticSiteGenerator()
-    generator.build()
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == 'build':
+        # Just build the site
+        generator = StaticSiteGenerator()
+        generator.build()
+    else:
+        # Serve with live reload
+        serve_site()
