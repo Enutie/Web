@@ -1,0 +1,26 @@
+languageCode = "en"
+languageName = "English"
+languageDirection = "ltr"
+weight = 1
+
+title = "Enutie"
+# copyright = "Copy, _right?_ :thinking_face:"
+
+[params]
+  dateFormat = "2 January 2006"
+
+  # mainSections = ["section1", "section2"]
+  # description = "My Creative Journey"
+
+[params.author]
+  # name = "Enutie"
+  # image = "img/author.jpg"
+  # headline = "My Creative Journey"
+  # bio = "Web developer - Aspiring Game Developer, learning art, music and writing"
+  # links = [
+  #   { email = "mailto:enutieo@gmail.com" },
+  #   { github = "https://github.com/enutie" },
+  #   { instagram = "https://instagram.com/enutiedraws" },
+  #   { linkedin = "https://linkedin.com/in/modp" },
+  #   { youtube = "https://www.youtube.com/@Enutie" },
+  # ]

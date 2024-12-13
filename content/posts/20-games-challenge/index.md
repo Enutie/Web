@@ -1,6 +1,12 @@
 ---
 title: The 20 Games Challenge
 date: 2024-12-10
+lastmod: 2023-12-12
+draft: false
+description: "Challenge to learn Game Development the right way."
+slug: "icons"
+tags: ["game dev", "20 game challnge", "devlog"]
+showDateUpdated: true
 ---
 
 So every story has its beginnings, but where to start? I have watched countless youtube videos about indie game development and there seems to be a consensus saying 'Start small!' and 'Don't make your dream game as the first game!'
