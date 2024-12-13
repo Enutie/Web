@@ -5,6 +5,8 @@ main_nav:
     url: "/posts.html"
   - title: "Gallery"
     url: "/gallery.html"
+  - title: "Games"
+    url: "/games.html"
 
 footer_nav:
   - title: "About"

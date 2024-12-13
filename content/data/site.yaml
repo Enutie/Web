@@ -18,3 +18,7 @@ site:
       hero:
         title: "My Blog"
         subtitle: "Thoughts, tutorials, and creative explorations"
+    games:
+      hero:
+        title: "My Games"
+        subtitle: "The culmination of my efforts"

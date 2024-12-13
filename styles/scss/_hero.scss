@@ -9,8 +9,8 @@
     background-color: $background;
     position: relative;
     padding: $spacing-xlarge $spacing-medium;
-    margin-top: -$nav-height;  // Pull up under the nav
-    padding-top: calc($spacing-xlarge + $nav-height);  // Add nav height to top padding
+    margin-top: -$nav-height;  
+    padding-top: calc($spacing-xlarge + $nav-height);  
     
     &::after {
         content: '';
