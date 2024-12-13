@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Games{% endblock %}
+{% block content %}
+    <h1>Games</h1>
+   
+    <div class="games-list">
+        {% for game in games %}
+            <div class="game-item">
+                <h2>{{ game.title }}</h2>
+                <p>{{ game.description }}</p>
+                <span class="status">Status: {{ game.status }}</span>
+                {% if game.link %}
+                    <a href="{% if not game.link.startswith('http') %}http://{% endif %}{{ game.link }}" 
+                       class="game-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        View Game
+                    </a>
+                {% endif %}
+                {% if game.github %}
+                <a href="{{ game.github }}"
+                    class="github-link"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Github
+                </a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

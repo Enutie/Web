@@ -1,0 +1,10 @@
+// Core styles
+@import 'variables';
+@import 'layout';
+@import 'hero';
+
+// Feature styles
+@import '../../features/blog/styles/posts';
+@import '../../features/gallery/styles/gallery';
+
+// Any additional styles can be imported here
