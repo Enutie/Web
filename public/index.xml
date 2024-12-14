@@ -6,8 +6,15 @@
     <description>Recent content on Enutie</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Game #1 Complete - Pong Clone</title>
+      <link>http://localhost:1313/posts/first-game/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/first-game/</guid>
+      <description>Taking the first step in the 20 Games Challenge by creating a Pong clone in Godot</description>
+    </item>
     <item>
       <title>Draw a Box: My First Steps into Drawing</title>
       <link>http://localhost:1313/posts/draw-a-box/</link>
@@ -21,6 +28,13 @@
       <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/beginning-journey/</guid>
       <description>What I want to learn</description>
+    </item>
+    <item>
+      <title>Pong Clone</title>
+      <link>http://localhost:1313/games/pong/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/games/pong/</guid>
+      <description></description>
     </item>
     <item>
       <title>The 20 Games Challenge</title>

@@ -7,9 +7,9 @@ summary: "My journey learning to draw using the Draw a Box program, starting wit
 tags: ["drawing", "learning", "drawabox", "art"]
 ---
 
-## Beginning the Journey
-
+{{< lead >}}
 One of the skills I've decided to develop is drawing. While I could simply sit down and start drawing - which would certainly be better than doing nothing - I realized that figuring out all the drawing concepts on my own would be an unnecessarily long and time-consuming process.
+{{< /lead >}}
 
 After searching for structured learning resources, I discovered [Draw a Box](https://drawabox.com/), a comprehensive program for learning the fundamentals of drawing.
 
@@ -21,17 +21,38 @@ I'm currently working through Lesson One, gradually approaching the infamous 250
 *Coming soon - will add images and descriptions of my line work exercises.*
 
 ### Ellipses Practice
-![Tables of Ellipses](tables-of-ellipses.jpg)
-![Ellipses in Planes](ellipses-in-planes.jpg)
-![Funnels](funnels.jpg)
+{{< figure 
+    src="tables-of-ellipses.jpg" 
+    alt="Tables of Ellipses practice from Lesson One"
+>}}
+
+{{< figure 
+    src="ellipses-in-planes.jpg" 
+    alt="Ellipses in Planes exercise" 
+>}}
+
+{{< figure 
+    src="funnels.jpg" 
+    alt="Funnels exercise with ellipses" 
+>}}
 
 ### Box Construction
-![Plotted Perspective](plotted-perspective.jpg)
-![Rough Perspective](rough-perspective.jpg)
-![Rotated Boxes](rotated-boxes.jpg)
+{{< figure 
+    src="plotted-perspective.jpg" 
+    alt="Plotted Perspective exercise" 
+>}}
+
+{{< figure 
+    src="rough-perspective.jpg" 
+    alt="Rough Perspective practice" 
+>}}
+
+{{< figure 
+    src="rotated-boxes.jpg" 
+    alt="Rotated Boxes exercise" 
+>}}
 
 ## Initial Reflections
-
 Even at this early stage, I can already feel improvements in my drawing skills. The ghosting method, in particular, has helped me draw with more confidence. While my lines might not be perfect yet, they're noticeably better than when I started - and that's what progress is all about!
 
 *Follow along with my drawing journey as I continue to practice and improve.*

@@ -16,19 +16,14 @@
   weight = 10
 
 [[main]]
-  name = "Categories"
-  pageRef = "categories"
+  name = "Games"
+  pageRef = "games"
   weight = 20
-
-[[main]]
-  name = "Tags"
-  pageRef = "tags"
-  weight = 30
 
 [[main]]
   name = "GitHub"
   url = "https://github.com/enutie/"
-  weight = 40
+  weight = 30
   [main.params]
     icon = "github"
     showName = false
