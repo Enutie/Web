@@ -2,10 +2,74 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Enutie</title>
-    <link>//localhost:1313/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Enutie</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Art</title>
+      <link>http://localhost:1313/tags/art/</link>
+      <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/art/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Drawabox</title>
+      <link>http://localhost:1313/tags/drawabox/</link>
+      <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/drawabox/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Drawing</title>
+      <link>http://localhost:1313/tags/drawing/</link>
+      <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/drawing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Learning</title>
+      <link>http://localhost:1313/tags/learning/</link>
+      <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>20 Game Challnge</title>
+      <link>http://localhost:1313/tags/20-game-challnge/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/20-game-challnge/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Devlog</title>
+      <link>http://localhost:1313/tags/devlog/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/devlog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Game Dev</title>
+      <link>http://localhost:1313/tags/game-dev/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/game-dev/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Music</title>
+      <link>http://localhost:1313/tags/music/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/music/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Writing</title>
+      <link>http://localhost:1313/tags/writing/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/writing/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -11,7 +11,7 @@ autoSwitchAppearance = true
 
 defaultThemeColor = "#FFFFFF"
 
-enableSearch = false
+enableSearch = true
 enableCodeCopy = false
 enableImageLazyLoading = true
 enableImageWebp = true
@@ -33,14 +33,14 @@ fingerprintAlgorithm = "sha256"
 
 [homepage]
   layout = "profile" # valid options: page, profile, custom
-  showRecent = false
+  showRecent = true
   recentLimit = 5
 
 [article]
   showDate = true
   showDateUpdated = false
   showAuthor = true
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showDraftLabel = true
   showEdit = false
   # editURL = "https://github.com/username/repo/"
@@ -49,7 +49,7 @@ fingerprintAlgorithm = "sha256"
   showPagination = true
   invertPagination = false
   showReadingTime = true
-  showTableOfContents = false
+  showTableOfContents = true
   showTaxonomies = false
   showWordCount = false
   showComments = false
@@ -57,7 +57,7 @@ fingerprintAlgorithm = "sha256"
 
 [list]
   showBreadcrumbs = false
-  showSummary = false
+  showSummary = true
   showTableOfContents = false
   showTaxonomies = false
   groupByYear = true

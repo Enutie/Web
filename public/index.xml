@@ -2,10 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Enutie</title>
-    <link>//localhost:1313/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Enutie</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Draw a Box: My First Steps into Drawing</title>
+      <link>http://localhost:1313/posts/draw-a-box/</link>
+      <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/draw-a-box/</guid>
+      <description>My journey learning to draw using the Draw a Box program, starting with basic lines and working towards the 250 boxes challenge.</description>
+    </item>
+    <item>
+      <title>Beginning My Creative Journey</title>
+      <link>http://localhost:1313/posts/beginning-journey/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/beginning-journey/</guid>
+      <description>What I want to learn</description>
+    </item>
+    <item>
+      <title>The 20 Games Challenge</title>
+      <link>http://localhost:1313/posts/20-games-challenge/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/20-games-challenge/</guid>
+      <description>Challenge to learn Game Development the right way.</description>
+    </item>
   </channel>
 </rss>

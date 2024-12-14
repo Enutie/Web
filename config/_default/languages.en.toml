@@ -15,8 +15,8 @@ title = "Enutie"
 [params.author]
   name = "Enutie"
   image = "img/author.jpg"
-  headline = "I'm only human"
-  bio = "A little bit about you"
+  headline = "I will continue to fail and that is progress."
+  bio = "Web Developer - Learning Game Development, Drawing, Music and Writing"
   links = [
     { email = "mailto:enutie@gmail.com" },
     { github = "https://github.com/enutie" },
