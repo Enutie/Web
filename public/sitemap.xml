@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     
+      <url>
+            <loc>http://localhost:1313/drawing/</loc>
+            <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/</loc>
+            <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/drawing/lesson-1/</loc>
+            <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/posts/first-game/</loc>
+            <lastmod>2024-12-14T00:00:00+00:00</lastmod>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/posts/</loc>
+            <lastmod>2024-12-14T00:00:00+00:00</lastmod>
+          </url>
+    
+  
+    
   
     
       <url>
@@ -15,20 +50,6 @@
   
     
   
-    
-      <url>
-            <loc>http://localhost:1313/</loc>
-            <lastmod>2024-12-12T00:00:00+00:00</lastmod>
-          </url>
-    
-  
-    
-  
-    
-      <url>
-            <loc>http://localhost:1313/posts/</loc>
-            <lastmod>2024-12-12T00:00:00+00:00</lastmod>
-          </url>
     
   
     
@@ -46,6 +67,20 @@
   
     
   
+    
+      <url>
+            <loc>http://localhost:1313/games/</loc>
+            <lastmod>2024-12-10T00:00:00+00:00</lastmod>
+          </url>
+    
+  
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/games/pong/</loc>
+            <lastmod>2024-12-10T00:00:00+00:00</lastmod>
+          </url>
     
   
     
