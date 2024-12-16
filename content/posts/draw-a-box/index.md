@@ -18,7 +18,18 @@ After searching for structured learning resources, I discovered [Draw a Box](htt
 I'm currently working through Lesson One, gradually approaching the infamous 250 boxes challenge. Here's what I've completed so far:
 
 ### Lines Homework
-*Coming soon - will add images and descriptions of my line work exercises.*
+{{< figure 
+    src="superimposed-lines.jpg" 
+    alt="Superimposed Lines from Lesson One"
+>}}
+{{< figure 
+    src="ghosted-lines.jpg" 
+    alt="Ghosted Lines practice from Lesson One"
+>}}
+{{< figure 
+    src="ghosted-planes.jpg" 
+    alt="Ghosted Planes practice from Lesson One"
+>}}
 
 ### Ellipses Practice
 {{< figure 
@@ -50,6 +61,11 @@ I'm currently working through Lesson One, gradually approaching the infamous 250
 {{< figure 
     src="rotated-boxes.jpg" 
     alt="Rotated Boxes exercise" 
+>}}
+
+{{< figure
+    src="organic-perspective.jpg"
+    alt="Organic Perspective exercise"
 >}}
 
 ## Initial Reflections

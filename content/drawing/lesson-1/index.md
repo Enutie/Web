@@ -10,43 +10,61 @@ Lesson 1 from Draw A Box
 So here are the exercises and homework I have made so far in the first lesson of Draw A Box.
 
 ### Lines Homework
-*Coming soon - will add images and descriptions of my line work exercises.*
+{{< figure
+    src="/draw-a-box/lessons/lesson-1/superimposed-lines.jpg"
+    alt="Superimposed Lines"
+>}}
+
+{{< figure
+    src="/draw-a-box/lessons/lesson-1/ghosted-lines.jpg"
+    alt="Ghosted Lines"
+>}}
+
+{{< figure
+    src="/draw-a-box/lessons/lesson-1/ghosted-planes.jpg"
+    alt="Ghosted Planes"
+>}}
 
 ### Ellipses Practice
 {{< figure 
-    src="/draw-a-box/tables-of-ellipses.jpg" 
+    src="/draw-a-box/lessons/lesson-1/tables-of-ellipses.jpg" 
     alt="Tables of Ellipses practice from Lesson One"
 >}}
 
 {{< figure 
-    src="/draw-a-box/ellipses-in-planes.jpg" 
+    src="/draw-a-box/lessons/lesson-1/ellipses-in-planes.jpg" 
     alt="Ellipses in Planes exercise" 
 >}}
 
 {{< figure 
-    src="/draw-a-box/funnels.jpg" 
+    src="/draw-a-box/lessons/lesson-1/funnels.jpg" 
     alt="Funnels exercise with ellipses" 
 >}}
 
 ### Box Construction
 {{< figure 
-    src="/draw-a-box/plotted-perspective.jpg" 
+    src="/draw-a-box/lessons/lesson-1/plotted-perspective.jpg" 
     alt="Plotted Perspective exercise" 
 >}}
 
 {{< figure 
-    src="/draw-a-box/rough-perspective.jpg" 
+    src="/draw-a-box/lessons/lesson-1/rough-perspective.jpg" 
     alt="Rough Perspective practice" 
 >}}
 
 {{< figure 
-    src="/draw-a-box/rotated-boxes.jpg" 
+    src="/draw-a-box/lessons/lesson-1/rotated-boxes.jpg" 
     alt="Rotated Boxes exercise" 
+>}}
+
+{{< figure 
+    src="/draw-a-box/lessons/lesson-1/organic-perspective.jpg" 
+    alt="organic perspective exercise" 
 >}}
 
 
 {{< alert "pencil" >}}
-**Progress Update:** Also done with the exercises! Just need to complete the (Organic Perspective)[https://drawabox.com/lesson/1/organicperspective]
+**Progress Update:** Done with the exercises! Now I need to do the 250 box challenge!
 {{< /alert >}}
 
 *Stay tuned for the next drawings on ym journey!*
