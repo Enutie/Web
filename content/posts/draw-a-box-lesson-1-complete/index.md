@@ -11,7 +11,7 @@ One down, six to go! It is amazing how difficult it can actually be to draw some
 
 ## Submitted my work for review
 
-So I reasoned with myself, that, like writing feedback is essential to improve, and draw-a-box has this very cheap and affordable critique program that i figured, why the hell not. They are already providing me with **free** how to draw lesson, and to keep it free and support the creatures I decided to take use of the critique. 
+So I reasoned with myself, that, like writing feedback is essential to improve, and draw-a-box has this very cheap and affordable critique program that i figured, why the hell not. They are already providing me with **free** how to draw lesson, and to keep it free and support the creators I decided to take use of the critique. 
 
 ### My feedback
 
