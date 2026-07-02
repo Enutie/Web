@@ -21,10 +21,10 @@ const BLOG = 'https://blog.enutie.com'
           I am a web dev by day. Delusively ambitious in learning drawing, game dev, writing, music and tactical warfare within the mortals realms.
         <br>All tracked below.
         </p>
-      </div>
-      <div class="hero-buttons">
-        <a class="btn-primary" href="https://pong.enutie.com">Play pong →</a>
-        <a class="btn-secondary" :href="BLOG">Read the blog</a>
+        <div class="hero-buttons">
+          <a class="btn-primary" href="https://pong.enutie.com">Play pong →</a>
+          <a class="btn-secondary" :href="BLOG">Read the blog</a>
+        </div>
       </div>
     </div>
     <div class="hero-band"></div>
@@ -74,7 +74,6 @@ const BLOG = 'https://blog.enutie.com'
   position: relative;
   padding: 0 var(--page-x) 32px;
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
   gap: 24px;
   flex-wrap: wrap;
@@ -109,6 +108,7 @@ const BLOG = 'https://blog.enutie.com'
   gap: 12px;
   flex-wrap: wrap;
   pointer-events: auto;
+  margin-top: 8px;
 }
 
 .btn-primary {
