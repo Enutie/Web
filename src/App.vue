@@ -1,19 +1,28 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import { themeOverride, systemTheme, activeTheme, type Theme } from '@/composables/theme'
+
+// An explicit toggle choice always wins (persisted, site-wide). With no choice
+// yet, the games hall defaults to its "lamplit" dark; every other page follows
+// the visitor's OS colour-scheme preference.
+const route = useRoute()
+
+const effective = computed<Theme>(() => {
+  if (themeOverride.value) return themeOverride.value
+  return route.meta.theme === 'dark' ? 'dark' : systemTheme.value
+})
+
+watch(
+  effective,
+  (theme) => {
+    activeTheme.value = theme
+    document.documentElement.dataset.theme = theme === 'dark' ? 'dark' : ''
+  },
+  { immediate: true },
+)
+</script>
 
 <template>
-  <h1>Welcome.</h1>
-  <p>
-    Work in progress - When I know what to build, so no eta. 
-  </p>
-  <p>
-    In the meantime, you can enjoy some of my other sites:
-  </p>
-  <ul>
-    <li><a href="https://blog.enutie.com">My blog</a></li>
-    <li><a href="https://Sketchedular.enutie.com">My warm-up generator for drawabox</a></li>
-    <li><a href="https://pong.enutie.com">My take on the classic - Pong</a></li>
-    <li><a href="https://Enutie.github.io">My Bachelor Project from my time at the IT University of Copenhagen</a></li>
-  </ul>
+  <RouterView />
 </template>
-
-<style scoped></style>

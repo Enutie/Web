@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Enutie — art, code & games, learning in public. Web dev by day; drawing, games, writing, music and warbands the rest of the time."
+    />
+    <!-- browser chrome matches the oxblood banner in both themes -->
+    <meta name="theme-color" content="#6E1A1A" />
+    <!-- social preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Enutie" />
+    <meta property="og:title" content="Enutie — art, code & games, learning in public" />
+    <meta
+      property="og:description"
+      content="Web dev by day. Drawing, games, writing, music and warbands the rest of the time — tracked honestly."
+    />
+    <meta property="og:url" content="https://enutie.com/" />
+    <meta name="twitter:card" content="summary" />
+    <title>Enutie — art, code &amp; games, learning in public</title>
+    <script>
+      // Set the theme before first paint to avoid a flash. An explicit stored
+      // choice wins; otherwise the games hall defaults dark and every other page
+      // follows the OS colour-scheme preference.
+      (function () {
+        try {
+          var stored = localStorage.getItem('enutie-theme')
+          var onGames = location.pathname.indexOf('/games') === 0
+          var sys = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          var theme = stored || (onGames ? 'dark' : sys)
+          if (theme === 'dark') document.documentElement.dataset.theme = 'dark'
+        } catch (e) {}
+      })()
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;0,800;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="app"></div>
