@@ -5,7 +5,8 @@ interface FeedPost {
   title?: string
   url?: string
   permalink?: string
-  date?: string 
+  date?: string // ISO string
+}
 
 interface TagFeed {
   count?: number
