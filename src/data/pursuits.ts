@@ -20,6 +20,8 @@ export interface Pursuit {
   /** lock the state so the feed never changes it (e.g. active with no posts yet) */
   stateOverride?: PursuitState
   stats: StatLine[]
+  /** permanent tool/project link — survives feed stats overrides */
+  link?: { label: string; href: string }
   latest: LatestEntry | null
   pending?: { title: string; note: string }
 }
@@ -33,6 +35,7 @@ export const pursuits: Pursuit[] = [
     tagUrl: `${BLOG}/tags/drawing/`,
     state: 'active',
     stats: [{ text: '3 lessons done' }, { text: '250 boxes · 1 dragon' }],
+    link: { label: 'sketchedular.enutie.com ↗', href: 'https://sketchedular.enutie.com' },
     latest: {
       title: 'Lesson 3 Review',
       date: "sep 2 '25",
@@ -55,10 +58,8 @@ export const pursuits: Pursuit[] = [
     tag: 'gamedev',
     tagUrl: `${BLOG}/tags/gamedev/`,
     state: 'resting',
-    stats: [
-      { text: '1 game shipped' },
-      { text: '', link: { label: 'pong.enutie.com ↗', href: 'https://pong.enutie.com' } },
-    ],
+    stats: [{ text: '1 game shipped' }],
+    link: { label: 'pong.enutie.com ↗', href: 'https://pong.enutie.com' },
     latest: {
       title: 'Game #1 Complete - Pong Clone',
       date: "dec 14 '24",

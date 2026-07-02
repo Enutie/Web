@@ -35,6 +35,8 @@ const stateColor = computed(() =>
       </template>
     </div>
 
+    <a v-if="pursuit.link" class="tool-link" :href="pursuit.link.href">{{ pursuit.link.label }}</a>
+
     <a v-if="pursuit.latest" class="latest" :href="pursuit.latest.url">
       <div class="latest-title">{{ pursuit.latest.title }}</div>
       <div class="latest-date">{{ pursuit.latest.date }} · latest entry</div>
@@ -88,6 +90,13 @@ const stateColor = computed(() =>
 }
 
 .stats-link {
+  color: var(--red-text);
+  text-decoration: none;
+}
+
+.tool-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
   color: var(--red-text);
   text-decoration: none;
 }
