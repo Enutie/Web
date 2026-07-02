@@ -57,8 +57,6 @@ docs/              site-guide.md (full walkthrough) + blog-json-feed.md
 
 Pursuit cards fetch `https://blog.enutie.com/tags/<tag>/index.json` and show the
 latest post per tag, falling back to static content if the feed is unavailable.
-The Hugo-side setup (outputs config + `term.json` template) is documented in
-[`docs/blog-json-feed.md`](docs/blog-json-feed.md).
 
 ## Deployment
 
