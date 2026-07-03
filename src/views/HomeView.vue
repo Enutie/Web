@@ -18,7 +18,7 @@ const BLOG = 'https://blog.enutie.com'
       <div class="hero-copy">
         <h1 class="hero-title">Welcome Stranger</h1>
         <p class="hero-sub">
-          I am a web dev by day. Delusively ambitious in learning drawing, game dev, writing, music and tactical warfare within the mortals realms.
+          I am a web dev by day. Delusionally ambitious in learning drawing, game dev, writing, music and tactical warfare within the Mortal Realms.
         <br>All tracked below.
         </p>
         <div class="hero-buttons">
