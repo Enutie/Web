@@ -43,6 +43,15 @@ function formatDate(iso?: string): string | null {
   return year === new Date().getFullYear() ? base : `${base} '${String(year).slice(-2)}`
 }
 
+// Hugo serves tag feeds newest-first today, but pickLatest/deriveState read
+// posts[0] as "the newest" — sort defensively so a feed change can't break that.
+function sortNewestFirst(feed: TagFeed): TagFeed {
+  const posts = [...(feed.posts ?? [])].sort(
+    (a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime(),
+  )
+  return { ...feed, posts }
+}
+
 function pickLatest(feed: TagFeed): LatestEntry | null {
   const post = feed.posts?.[0]
   if (!post) return null
@@ -61,7 +70,8 @@ function deriveState(feed: TagFeed): PursuitState {
   return days <= ACTIVE_DAYS ? 'active' : 'resting'
 }
 
-function applyFeed(pursuit: Pursuit, feed: TagFeed) {
+function applyFeed(pursuit: Pursuit, rawFeed: TagFeed) {
+  const feed = sortNewestFirst(rawFeed)
   const latest = pickLatest(feed)
   if (latest) pursuit.latest = latest
 
