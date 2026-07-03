@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { Pursuit } from '@/data/pursuits'
+import StateIndicator from '@/components/StateIndicator.vue'
 
 const props = defineProps<{ pursuit: Pursuit }>()
 
@@ -24,7 +25,9 @@ const stateColor = computed(() =>
   <div class="card" :style="{ borderTopColor: bandColor }">
     <div class="title-row">
       <div class="name">{{ pursuit.name }}</div>
-      <div class="state" :style="{ color: stateColor }">{{ pursuit.state }}</div>
+      <div class="state" :style="{ color: stateColor }">
+        <StateIndicator :state="pursuit.state" />{{ pursuit.state }}
+      </div>
     </div>
 
     <div class="stats">
@@ -80,6 +83,9 @@ const stateColor = computed(() =>
   font-size: 9.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .stats {

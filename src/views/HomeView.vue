@@ -3,6 +3,7 @@ import SiteBanner from '@/components/SiteBanner.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 import HeroScene from '@/components/HeroScene.vue'
 import PursuitCard from '@/components/PursuitCard.vue'
+import StateIndicator from '@/components/StateIndicator.vue'
 import { useBlogFeed } from '@/composables/useBlogFeed'
 
 const { items: pursuits } = useBlogFeed()
@@ -37,13 +38,9 @@ const BLOG = 'https://blog.enutie.com'
         <div class="head-note">See how far I've come. "A journey of a thousand miles begins with a single step."</div>
       </div>
       <div class="legend">
-        <div class="legend-item"><span class="sq" style="background: var(--red)"></span>active</div>
-        <div class="legend-item">
-          <span class="sq" style="background: var(--brass)"></span>resting
-        </div>
-        <div class="legend-item">
-          <span class="sq" style="background: var(--border)"></span>queued
-        </div>
+        <div class="legend-item"><StateIndicator state="active" />active</div>
+        <div class="legend-item"><StateIndicator state="resting" />resting</div>
+        <div class="legend-item"><StateIndicator state="queued" />queued</div>
       </div>
     </div>
 
@@ -204,11 +201,6 @@ const BLOG = 'https://blog.enutie.com'
   display: flex;
   align-items: center;
   gap: 5px;
-}
-
-.sq {
-  width: 8px;
-  height: 8px;
 }
 
 .grid {
