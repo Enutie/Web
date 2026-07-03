@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { defineAsyncComponent } from 'vue'
 import SiteBanner from '@/components/SiteBanner.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
-import HeroScene from '@/components/HeroScene.vue'
 import PursuitCard from '@/components/PursuitCard.vue'
+
+// three.js is ~530 kB — stream the scene in after first paint instead of
+// blocking the page on it. The hero has a fixed height, so nothing shifts.
+const HeroScene = defineAsyncComponent(() => import('@/components/HeroScene.vue'))
 import StateIndicator from '@/components/StateIndicator.vue'
 import { useBlogFeed } from '@/composables/useBlogFeed'
 
