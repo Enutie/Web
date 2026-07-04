@@ -16,6 +16,10 @@ const router = createRouter({
       component: () => import('@/views/GamesView.vue'),
       meta: { theme: 'dark' },
     },
+    // Direct hits on /index.html (e.g. from search results) and any other
+    // unknown path fall back to the home view instead of a blank page.
+    { path: '/index.html', redirect: '/' },
+    { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
   scrollBehavior() {
     return { top: 0 }
