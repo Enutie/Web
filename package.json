@@ -14,7 +14,7 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
-    "@enutie/design": "git+https://github.com/Enutie/design.git",
+    "@enutie/design": "github:Enutie/design",
     "three": "^0.185.1",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
