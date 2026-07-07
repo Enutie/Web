@@ -11,6 +11,7 @@ const year = new Date().getFullYear()
       <a :href="`${BLOG}/index.xml`">rss</a>
       <a :href="GITHUB">github</a>
       <a href="https://enutie.github.io">bachelor project</a>
+      <a href="https://sketcheduler.enutie.com">sketcheduler</a>
       <a :href="BLOG">blog.enutie.com</a>
     </div>
   </footer>
