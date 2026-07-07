@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import SiteBanner from '@/components/SiteBanner.vue'
-import SiteFooter from '@/components/SiteFooter.vue'
+import SiteBanner from '@enutie/design/SiteBanner.vue'
+import SiteFooter from '@enutie/design/SiteFooter.vue'
+import { HUB_FOOTER_LINKS } from '@/data/footerLinks'
 import GameCard from '@/components/GameCard.vue'
 import { games } from '@/data/games'
 
@@ -38,7 +39,7 @@ const nextNumber = String(games.length + 1).padStart(2, '0')
     </p>
   </section>
 
-  <SiteFooter />
+  <SiteFooter :links="HUB_FOOTER_LINKS" />
 </template>
 
 <style scoped>

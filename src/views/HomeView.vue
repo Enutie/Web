@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue'
-import SiteBanner from '@/components/SiteBanner.vue'
-import SiteFooter from '@/components/SiteFooter.vue'
+import SiteBanner from '@enutie/design/SiteBanner.vue'
+import SiteFooter from '@enutie/design/SiteFooter.vue'
+import { HUB_FOOTER_LINKS } from '@/data/footerLinks'
 import PursuitCard from '@/components/PursuitCard.vue'
 
 // three.js is ~530 kB — stream the scene in after first paint instead of
@@ -57,7 +58,7 @@ const BLOG = 'https://blog.enutie.com'
     </p>
   </section>
 
-  <SiteFooter />
+  <SiteFooter :links="HUB_FOOTER_LINKS" />
 </template>
 
 <style scoped>

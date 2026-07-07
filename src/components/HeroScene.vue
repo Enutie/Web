@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, ref, watch } from 'vue'
-import { activeTheme } from '@/composables/theme'
+import { activeTheme } from '@enutie/design/theme'
 import type { RoomScene } from '@/three/room'
 
 // Thin mount point for the hero diorama. The scene itself (and three.js)
