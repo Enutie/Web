@@ -8,6 +8,8 @@ My personal site. The companion blog lives separately at
 - **Vue 3** (`<script setup>`, TypeScript) + **vue-router**
 - **Vite** for dev/build
 - **three.js** for the hero scene (lazy-loaded, honours `prefers-reduced-motion`)
+- **[@enutie/design](https://github.com/Enutie/design)** — shared design package
+  (tokens, fonts, banner, footer, theme composable) used across the Enutie sites
 - Deployed as a static SPA to **GitHub Pages** via GitHub Actions
 
 ## Features
@@ -17,7 +19,10 @@ My personal site. The companion blog lives separately at
 - Pursuits board fed by the blog: each card pulls its latest post from the blog's
   per-tag JSON at runtime, with a static fallback so it never fails.
 - Data-driven content — pursuits and games are plain typed arrays, no templating.
-- Design tokens in one file; radius-0, border-and-band visual system, no shadows.
+- Shared look and feel via `@enutie/design`: design tokens, self-hosted fonts,
+  site banner/footer and the theme composable all come from the package —
+  radius-0, border-and-band visual system, no shadows. This site is the hub, so
+  its footer carries the full site catalogue (`src/data/footerLinks.ts`).
 
 ## Getting started
 
@@ -39,11 +44,10 @@ src/
   App.vue          root component; resolves the active theme
   router/          routes → views (/ = home, /games)
   views/           one component per page (HomeView, GamesView)
-  components/       reusable pieces (banner, footer, hero, cards)
-  data/            content as typed arrays (pursuits.ts, games.ts)  ← edit these
-  composables/      theme state + blog feed fetching
-  assets/          tokens.css (colors/type/spacing) + base.css
-docs/              site-guide.md (full walkthrough) + blog-json-feed.md
+  components/       site-specific pieces (hero, cards); banner/footer come from @enutie/design
+  data/            content as typed arrays (pursuits.ts, games.ts, footerLinks.ts)  ← edit these
+  composables/      blog feed fetching (theme state lives in @enutie/design)
+  assets/          base.css (tokens come from @enutie/design)
 ```
 
 ## Editing content
@@ -51,7 +55,9 @@ docs/              site-guide.md (full walkthrough) + blog-json-feed.md
 - **Pursuit cards:** `src/data/pursuits.ts`
 - **Games:** `src/data/games.ts` (screenshots go in `public/games/`)
 - **Copy:** the relevant `src/views/*.vue`
-- **Colors / type:** `src/assets/tokens.css`
+- **Footer links:** `src/data/footerLinks.ts` (the hub catalogue)
+- **Colors / type / banner / footer:** the [@enutie/design](https://github.com/Enutie/design)
+  package — change it there, then `npm update @enutie/design` here
 
 ## Blog feed
 
