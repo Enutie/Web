@@ -21,4 +21,14 @@ export const games: Game[] = [
     devlogUrl: 'https://blog.enutie.com/posts/first-game/',
     screenshot: '/games/pong.png'
   },
+  {
+    title: 'BREAKOUT',
+    number: '02',
+    engine: 'godot',
+    shippedDate: 'aug 26',
+    quip: 'one brick always survives',
+    playUrl: 'https://breakout.enutie.com',
+    devlogUrl: 'https://blog.enutie.com/posts/break-out/',
+    screenshot: '/games/breakout1.png'
+  },
 ]
