@@ -54,5 +54,7 @@ export const P = {
   graphite: '#4a4238',
   pongBg: '#14100c',
   pongFg: '#f0e9da',
+  // breakout brick rows, top to bottom (site tokens)
+  bricks: ['#6e1a1a', '#b8862f', '#5d7a4e', '#4e5a68'],
   lampWarm: '#ffb46b',
 } as const

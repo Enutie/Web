@@ -7,12 +7,13 @@ import { buildShelf } from './shelf'
 import { buildGuitar } from './guitar'
 import { buildWallArt } from './wallArt'
 import { ROOM } from './structure'
-import { createPongScreen } from './screens'
+import { createArcadeScreen } from './screens'
 import { createLights, type RoomTheme } from './lights'
 
 // The hero diorama: an isometric-ish corner of the owner's room, assembled
-// from low-poly primitives. Slow bob + mouse parallax; pong plays on the
-// monitor; the lighting follows the site theme (day ↔ lamplit night).
+// from low-poly primitives. Slow bob + mouse parallax; the monitor cycles
+// through the shipped games (pong ↔ breakout); the lighting follows the site
+// theme (day ↔ lamplit night).
 //
 // Honors prefers-reduced-motion by rendering stills instead of animating,
 // and pauses the render loop entirely while the hero is scrolled off-screen.
@@ -56,9 +57,9 @@ export function createRoomScene(
   room.rotation.set(BASE_ROT_X, BASE_ROT_Y, 0)
   scene.add(room)
 
-  const pong = createPongScreen(opts.reducedMotion)
+  const arcade = createArcadeScreen(opts.reducedMotion)
   buildStructure(kit, room)
-  const dev = buildDevDesk(kit, room, pong.texture)
+  const dev = buildDevDesk(kit, room, arcade.texture)
   const hobby = buildHobbyDesk(kit, room)
   buildShelf(kit, room)
   buildGuitar(kit, room)
@@ -160,7 +161,7 @@ export function createRoomScene(
     room.rotation.x = BASE_ROT_X + smoothRX
     room.position.y = placeY + Math.sin(elapsed * 0.8) * 0.045
 
-    pong.update(dt)
+    arcade.update(dt)
     dev.ledMaterial.emissiveIntensity = 0.65 + 0.35 * (0.5 + 0.5 * Math.sin(elapsed * 2.3))
     rig.update(dt, elapsed)
 
@@ -209,7 +210,7 @@ export function createRoomScene(
       ro.disconnect()
       container.removeEventListener('pointermove', onMove)
       kit.dispose()
-      pong.dispose()
+      arcade.dispose()
       renderer.dispose()
       // renderer.dispose() alone doesn't release the WebGL context —
       // without this, Home↔Games navigation piles up live contexts

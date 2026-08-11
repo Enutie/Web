@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { P } from './palette'
 import type { Kit } from './kit'
 
-// The dev corner: desk against the back wall, monitor running pong, keyboard,
+// The dev corner: desk against the back wall, monitor running the games, keyboard,
 // mouse, coffee, a tower under the desk with a pulsing power LED, and an
 // office chair swiveled slightly off-axis.
 
